@@ -11,20 +11,18 @@ app.use(cors());
 // Middleware to parse JSON body data
 app.use(bodyParser.json());
 
-// Create a reusable transporter object using SMTP transport
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'anuvihas2005@gmail.com',  
-    pass: 'rxzg pytk eltu tdnj',  // App password 
+    pass: '', 
   },
 });
 
 // POST route to handle form submissions
 app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
-
-  // Setup email data
+  
   const mailOptions = {
     from: email,  
     to: 'anuvihas2005@gmail.com',
