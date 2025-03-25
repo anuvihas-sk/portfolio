@@ -1,0 +1,340 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+header .logo h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the menu */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Space between the items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px; /* Slightly smaller font */
+    text-transform: uppercase; /* Makes text more minimalistic */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Subtle color change on hover */
+    transform: scale(1.1); /* Slight scaling on hover for a clean effect */
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.mobile-nav.active {
+    display: flex; /* Show menu when active */
+}
+
+.mobile-nav li {
+    margin: 15px 0;
+}
+
+.mobile-nav li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mobile-nav li a:hover {
+    color: #f1c40f;
+}
+ 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the regular menu on small screens */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .mobile-nav.active {
+        display: flex; /* Show the mobile navigation */
+    }
+}
+
+/* Home Section */
+#home {
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+}
+
+#home .content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile {
+    margin-bottom: 30px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+#home h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0e0d0d;
+}
+
+.title {
+    font-size: 20px;
+    color: #0e0d0d;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #0e0d0d;
+}
+
+.resume-btn {
+    background-color: #2575fc;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 20px;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #6a11cb;
+}
+
+#home button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+#home button:hover {
+    background-color: #6a11cb;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Align items vertically (optional) */
+}
+
+.social-icons a {
+    font-size: 50px; /* Adjust the size as needed */
+    color: #333; /* Default color */
+    margin: 0 15px; /* Space between icons */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #2575fc; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+
+/* Services Section */
+#services {
+    background: #f1f1f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+ /* Remove underlines from all links */
+a {
+    text-decoration: none;
+}
+
+/* You can also target links within specific sections, if needed */
+#services a {
+    text-decoration: none;
+}
+
+#services h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Contact Section */
+#contact {
+    background: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #6a11cb;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
