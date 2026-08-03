@@ -39,7 +39,7 @@
             <div class="profile">
                 <img src="images/anuvihas.jpg" alt="Profile Picture">
                 <h1>Anuvihas</h1>
-                <p class="title">Mobile-Web Developer</p>
+                <p class="title">Software Enthusiast</p>
             </div>
             <p>Opportunities don't happen, you create them!</p>
             <a href="ANUVIHAS S K.pdf" class="resume-btn" target="_blank">Download Resume</a>
@@ -50,8 +50,7 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <p>Creative mobile-web developer with a knack for building sleek, user-friendly sites. Passionate about coding and solving problems. Always learning, always evolving.</p>
-            
+            <p>Creative sofwatre developer with a passion for building innovative solutions. Skilled in full-stack development, problem-solving, and continuous learning. Dedicated to delivering high-quality code and contributing to impactful projects.</p>
             <!-- Social Icons -->
             <div class="social-icons">
                 <a href="https://linkedin.com/in/anuvihas" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
@@ -103,57 +102,52 @@
         <p>&copy; 2025 anuvihas | All Rights Reserved</p>
     </footer>
 
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Handle form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        document.getElementById('form-response').innerHTML = '<p>Sending your message...</p>';
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        if (name === '' || email === '' || message === '') {
-            alert("Please fill in all fields.");
-            return;
-        }
+    emailjs.init({
+        publicKey: "6nOR9JpnkFrkDq57p"
+    });
 
-        // Send data to the server using fetch API
-        fetch('https://localhost:55000/send-email', {  
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message
-            })
-        })
-        .then(response => {
-            if (!response.ok) 
-            throw new Error(`Server error: ${response.statusText}`);
+    // Contact Form
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const formResponse = document.getElementById("form-response");
+
+        formResponse.innerHTML = "<p>Sending your message...</p>";
+
+        emailjs.send(
+            "service_b6hfvp8",
+            "template_q24ll1o",
+            {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
             }
-            return response.json();
+        )
+        .then(function() {
+            formResponse.innerHTML =
+                "<p style='color:green;'>✅ Your message has been sent successfully!</p>";
+
+            document.getElementById("contact-form").reset();
         })
-        .then(data => {
-            console.log('SUCCESS!', data);
-            document.getElementById('form-response').innerHTML = '<p>Your message has been sent successfully!</p>';
-        })
-        .catch(error => {
-            if (error instanceof SyntaxError) {
-            document.getElementById('form-response').innerHTML = '<p>There was an error processing the response. The server might not have sent a valid JSON response.</p>';
-            } else {
-            document.getElementById('form-response').innerHTML = `<p>There was an error sending your message: ${error.message}. Please try again later.</p>`;
-            }
-            console.log('Error:', error);
+        .catch(function(error) {
+            console.error(error);
+
+            formResponse.innerHTML =
+                "<p style='color:red;'>❌ Failed to send message. Please try again.</p>";
         });
     });
 
-    // Handle mobile menu toggle
-   document.querySelector('.hamburger').addEventListener('click', function() {
-    document.querySelector('.mobile-nav').classList.toggle('active');
-});
+    // Mobile Menu
+    const hamburger = document.querySelector(".hamburger");
+    const mobileNav = document.querySelector(".mobile-nav");
 
-
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+            mobileNav.classList.toggle("active");
+        });
+    }
     </script>
 </body>
 </html>
