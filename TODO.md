@@ -1,36 +1,57 @@
-# React Portfolio Conversion Plan
+# 🌐 Personal Portfolio
 
-## Steps to Complete:
+## 🚀 Live Demo
 
-1. ✅ Wait for React app creation to complete
-2. ✅ Install React Router for navigation
-3. ✅ Create component structure:
-   - Header component with navigation
-   - Home component with profile section
-   - About component with social links
-   - Services component with project cards
-   - Contact component with form
-   - Footer component
-4. ✅ Set up routing in App.js
-5. ✅ Copy and adapt CSS styles
-6. ✅ Implement form handling with backend integration
-7. ✅ Test the application
+https://anuvihas.dev
 
-## Components to Create:
-- Header.js
-- Home.js
-- About.js
-- Services.js
-- Contact.js
-- Footer.js
+## 📌 Features
 
-## Dependencies:
-- react-router-dom for navigation
-- Existing server.js for backend
-- Font Awesome for icons
+- Responsive design for desktop, tablet, and mobile
+- Modern and clean UI
+- About Me section
+- Projects showcase
+- Contact form using EmailJS
+- Resume download
+- Social media links
+- Smooth scrolling navigation
 
-## Notes:
-- Keep the same styling from styles.css
-- Maintain the same functionality as original HTML
-- Ensure responsive design works
-- Test form submission with backend
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- EmailJS
+- Font Awesome
+- Vercel
+
+
+## 📧 Contact Form
+
+The contact form is integrated using **EmailJS**, allowing visitors to send messages directly without needing a backend server.
+
+## 📱 Responsive
+
+The website is optimized for:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+
+## 👨‍💻 Author
+
+**Anuvihas S K**
+
+GitHub:
+https://github.com/anuvihas-sk
+
+LinkedIn:
+https://linkedin.com/in/anuvihas
+
+Portfolio:
+https://anuvihas.dev
+
+---
+
+⭐ If you like this project, consider giving it a star.
